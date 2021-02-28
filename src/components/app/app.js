@@ -5,7 +5,18 @@ import SearchPannel from '../search-pannel';
 import PostStatusFilter from '../post-status-filter';
 import PostList from '../post-list';
 import PostAddForm from '../post-add-form';
+
 import './app.css';
+import styled from 'styled-components';
+
+const AppBlock = styled.div`
+    margin: 0 auto;
+    max-width: 800px;
+`;
+
+const CostomAppBlock = styled(AppBlock)`
+    background-color: purple;
+`;
 
 const App = () => {
     const data = [
@@ -27,7 +38,7 @@ const App = () => {
     ];
 
     return (
-        <div className="app">
+        <AppBlock>
             <AppHeader/>
             <div className="d-flex search-pannel">
                 <SearchPannel/>
@@ -35,7 +46,7 @@ const App = () => {
             </div>
             <PostList posts={data}/>
             <PostAddForm/>
-        </div>
+        </AppBlock>
     )
 }
 
